@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Answer {
@@ -11,7 +11,7 @@ impl Answer {
         Self {
             question_uuid: question_uuid.to_owned(),
             content: content.to_owned(),
-        }        
+        }
     }
 }
 
@@ -28,7 +28,7 @@ impl AnswerId {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct AnswerDetail {
     pub answer_uuid: String,
     pub question_uuid: String,
